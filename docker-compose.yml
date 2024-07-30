@@ -3,8 +3,8 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile # Assurez-vous que le Dockerfile est dans le même répertoire
-    image: task-app # Nom correct pour l'image
+      dockerfile: Dockerfile
+    image: task-app
     container_name: task
     restart: unless-stopped
     tty: true
@@ -15,8 +15,6 @@ services:
     volumes:
       - ./:/var/www
       - ./php.ini:/usr/local/etc/php/conf.d/php.ini
-    ports:
-      - "9000:9000"
     networks:
       - app-network
 
@@ -29,9 +27,9 @@ services:
       - "3307:3306"
     environment:
       MYSQL_DATABASE: task
-      MYSQL_ROOT_PASSWORD: 
-      MYSQL_PASSWORD: 
-      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: laravel_password
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel_password
     volumes:
       - dbdata:/var/lib/mysql
     networks:
