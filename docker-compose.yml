@@ -37,7 +37,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3307:3306"
+      - "8000:9000"
     environment:
       MYSQL_DATABASE: task
       MYSQL_ROOT_PASSWORD: laravel_password
