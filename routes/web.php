@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+    return view('welcome');
+ });
 
 // Route::get('/tasks', TaskController::class, 'index');
 Route::get('/tasks', function () {
